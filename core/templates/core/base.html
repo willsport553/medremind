@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedRemind</title>
+    <link rel="stylesheet" href="{% static 'core/base.css' %}">
+</head>
+<body>
+    <header>
+        <div id="left">
+            {% block header_left%}
+            {% endblock header_left%}
+        </div>
+        <h1 id="center">
+            {% block header_center%}
+            Welcome
+            {% endblock header_center%}
+        </h1>
+        <div id="right">
+            {% block header_right%}
+            {% endblock header_right%}
+        </div>
+        </header>
+    <div id="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>

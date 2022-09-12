@@ -1,0 +1,9 @@
+{% extends "core/base.html"%}
+
+{% block content %}
+<div class="align-center">
+<h1>Welcome to<br>MedRemind!</h1>
+
+<a class="big-btn btn" href="{% url 'social:begin' 'google-oauth2' %}">Log in/sign up <i class="ti ti-arrow-right"></i></a>
+</div>
+{% endblock content %}
