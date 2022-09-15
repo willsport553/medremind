@@ -1,0 +1,42 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block header_center %}
+    Let's Get Started
+{% endblock header_center %}
+
+{% block header_left %}
+    <a class="btn red" href="{% url 'logout_user' %}">Log out <i class="ti ti-logout"></i></a>
+{% endblock header_left %}
+
+{% block content %}
+    <div class="align-center">
+        <h2>Hi, {{ user.first_name }}!</h2>
+        <p>
+            Your account has been created. Next, we need to know who you are!
+            <br>
+            Please choose a type below.
+        </p>
+        <div class="split split-1-1">
+            <p>
+                Are you a pharmacist, and you need to create a new class?
+                <br>
+                <a class="btn big-btn btn-bg-image bottom-left orange"
+                   href="{% url 'pharmacist_setup' %}"
+                   style="background-image: url('{% static 'core/pharmacist.png' %}');">
+                    I'm a pharmacist <i class="ti ti-arrow-right"></i>
+                </a>
+            </p>
+            <p>
+                Are you a patient, and you want to join a class?
+                <br>
+                <a class="btn big-btn btn-bg-image bottom-right purple"
+                   href="{% url 'patient_setup' %}"
+                   style="background-image: url('{% static 'core/patient.png' %}');">
+                    I'm a patient <i class="ti ti-arrow-right"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+{% endblock content %}

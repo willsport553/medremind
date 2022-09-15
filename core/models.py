@@ -31,3 +31,10 @@ class Medication(models.Model):
 
 class Prescription(models.Model):
     pass
+
+
+class Patient(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    nhi = models.TextField(max_length=7, unique=True, null=False, blank=False)
+
+

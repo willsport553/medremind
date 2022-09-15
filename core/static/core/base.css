@@ -4,10 +4,10 @@
     --color-light: #ffffff;
     --color-dark: #222222;
     --color-red: #b80000;
-    --color-orange: #ca6200;
+    --color-orange: #258a91ff;
     --color-green: #00882d;
     --color-blue: #006ba5;
-    --color-purple: #9400b6;
+    --color-purple: #4dba41ff;
     font-family: var(--font-body);
     font-size: x-large;
     background-color: var(--color-light);
