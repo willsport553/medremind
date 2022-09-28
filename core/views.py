@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from .models import *
 from .forms import *
 
 # Create your views here.
@@ -103,9 +104,9 @@ def patient_setup(request):
             # STEP 1: Set is_patient flag
             request.user.is_patient = True
 
-            # STEP 2: Associate patient with class
-            request.user.class_id = Class.objects.get(
-                join_code=form.cleaned_data['join_code'])
+            # STEP 2: Add NHI to user and create profile
+            profile = Patient(user=request.user, nhi=form.cleaned_data["nhi_key"])
+            profile.save()
 
             # STEP 3: Save it all & redirect to patient home
             request.user.save()
